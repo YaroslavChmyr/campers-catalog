@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 64px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #f2f4f7;
+  position: relative;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+}
+
+.active {
+  color: #d84343;
+}
+
+.link:hover {
+  color: #d84343;
+}

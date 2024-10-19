@@ -1,0 +1,29 @@
+.filterItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 16px 18px;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  width: 112px;
+}
+
+.filterItem:hover {
+  border-color: #e44848;
+}
+
+.filterItemIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.filterItemLabel {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: #101828;
+}

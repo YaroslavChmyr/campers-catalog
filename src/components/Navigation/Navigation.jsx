@@ -10,7 +10,7 @@ const isActiveLink = ({ isActive }) => clsx(css.link, {
 function Navigation() {
   return (
     <nav className={css.nav}>
-      <img src={logo} alt="logo" />
+      <NavLink to="/" className={css.logo}><img src={logo} alt="logo" /></NavLink>
       <div className={css.navLinks}>
       <NavLink to="/" className={isActiveLink}>Home</NavLink>
       <NavLink to="/catalog" className={isActiveLink}>Catalog</NavLink>

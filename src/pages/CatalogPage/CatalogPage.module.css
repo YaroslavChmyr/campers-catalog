@@ -1,0 +1,34 @@
+.container {
+  padding: 48px 64px;
+  display: flex;
+  gap:64px;
+}
+
+.filtersContainer {
+  /* display: flex; */
+  flex-direction: column;
+  gap: 40px;
+  max-width: 360px;
+}
+
+.locationField {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.locationLabel {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6c717b;
+}
+
+.vehicleFiltersLabel {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #475467;
+  margin-bottom: 32px;
+}

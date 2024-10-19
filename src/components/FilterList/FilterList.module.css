@@ -1,0 +1,27 @@
+.vehicleFilters {
+  margin-bottom: 32px;
+}
+
+.vehicleFiltersTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #101828;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #dadde1;
+}
+
+.vehicheFiltersList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 12px;
+}
+
+/* .divider {
+  width: 100%;
+  height: 1px;
+  background-color: #dadde1;
+  margin: 24px 0;
+} */

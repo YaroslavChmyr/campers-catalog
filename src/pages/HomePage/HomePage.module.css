@@ -9,7 +9,7 @@
   background-position: center;
   background-image: url('../../assets/images/hero-img.jpg');
   background-color: rgba(0, 0, 0, 0.2);
-  height: 93vh;
+  height: calc(100vh - 72px);
 }
 
 .titlesContainer {

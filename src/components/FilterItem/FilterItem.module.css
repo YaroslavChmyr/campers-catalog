@@ -4,19 +4,26 @@
   gap: 8px;
   flex-direction: column;
   cursor: pointer;
-  padding: 16px 18px;
+  justify-content: center;
+  padding: 8px 12px;
   border: 1px solid #dadde1;
   border-radius: 12px;
   width: 112px;
+  height: 96px;
 }
 
 .filterItem:hover {
   border-color: #e44848;
 }
 
+.selected {
+  border-color: #e44848;
+}
+
 .filterItemIcon {
   width: 32px;
   height: 32px;
+  flex-shrink: 0;
 }
 
 .filterItemLabel {

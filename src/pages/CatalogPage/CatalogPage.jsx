@@ -7,6 +7,8 @@ import {
   selectCampers,
   selectIsLoading,
   selectError,
+  selectEquipment,
+  selectVehicleType,
 } from "../../redux/selectors";
 import { useEffect } from "react";
 import { fetchCampers } from "../../api/campersOps";
@@ -15,15 +17,30 @@ import css from "./CatalogPage.module.css";
 function CatalogPage() {
   const dispatch = useDispatch();
 
-  const { isLoading, error, campers } = useSelector((state) => ({
+  const { isLoading, error, equipment, vehicleType } = useSelector((state) => ({
     isLoading: selectIsLoading(state),
     error: selectError(state),
-    campers: selectCampers(state),
+    equipment: selectEquipment(state),
+    vehicleType: selectVehicleType(state),
   }));
+
+  const allVehicles = useSelector(selectCampers); // Selector to get all vehicles
 
   useEffect(() => {
     dispatch(fetchCampers());
   }, [dispatch]);
+
+  const handleSearch = () => {
+    // Log the filters to ensure they are as expected
+    console.log('Filters before dispatching:', { equipment, vehicleType });
+
+    const filters = {
+      equipment,
+      vehicleType,
+    };
+
+    dispatch(fetchCampers(filters));
+  };
 
   return (
     <div className={css.container}>
@@ -37,17 +54,15 @@ function CatalogPage() {
           <FilterList title="Vehicle equipment" />
           <FilterList title="Vehicle type" />
         </div>
-        <MainButton>Search</MainButton>
+        <MainButton onClick={handleSearch}>Search</MainButton>
       </div>
       {isLoading && <p>Loading...</p>}
       {error && <p>Something went wrong: {error.message}</p>}
-      {!isLoading && !error && campers?.items?.length > 0 && (
+      {!isLoading && !error && (
         <ul className={css.catalogContainer}>
-          {campers.items.map((camper) => (
+          {allVehicles.map((camper) => (
             <li key={camper.id} className={css.vehicleCard}>
-              <VehicleCard
-                vehicle = {camper}
-              />
+              <VehicleCard vehicle={camper} />
             </li>
           ))}
         </ul>

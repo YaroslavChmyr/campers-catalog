@@ -1,15 +1,17 @@
 import VehicleAttribute from "../VehicleAttribute/VehicleAttribute";
-import acIcon from "../../assets/icons/ac-filter-icon.svg";
-import automaticIcon from "../../assets/icons/automatic-filter-icon.svg";
-import bathroomIcon from "../../assets/icons/bathroom-filter-icon.svg";
-import gasIcon from "../../assets/icons/gas-filter-icon.svg";
-import kitchenIcon from "../../assets/icons/kitchen-filter-icon.svg";
-import microwaveIcon from "../../assets/icons/microwave-filter-icon.svg";
-import petrolIcon from "../../assets/icons/petrol-filter-icon.svg";
-import radioIcon from "../../assets/icons/radio-filter-icon.svg";
-import refrigeratorIcon from "../../assets/icons/refrigerator-filter-icon.svg";
-import tvIcon from "../../assets/icons/tv-filter-icon.svg";
-import waterIcon from "../../assets/icons/water-filter-icon.svg";
+import {
+  acIcon,
+  automaticIcon,
+  bathroomIcon,
+  gasIcon,
+  kitchenIcon,
+  microwaveIcon,
+  petrolIcon,
+  radioIcon,
+  refrigeratorIcon,
+  tvIcon,
+  waterIcon,
+} from "../../assets/icons/icons";
 import css from "./VehicleAttributeList.module.css";
 
 function VehicleAttributeList({ vehicle }) {

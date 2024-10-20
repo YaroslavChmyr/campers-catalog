@@ -1,0 +1,14 @@
+export { default as acIcon } from "./ac-filter-icon.svg";
+export { default as automaticIcon } from "./automatic-filter-icon.svg";
+export { default as bathroomIcon } from "./bathroom-filter-icon.svg";
+export { default as gasIcon } from "./gas-filter-icon.svg";
+export { default as kitchenIcon } from "./kitchen-filter-icon.svg";
+export { default as microwaveIcon } from "./microwave-filter-icon.svg";
+export { default as petrolIcon } from "./petrol-filter-icon.svg";
+export { default as radioIcon } from "./radio-filter-icon.svg";
+export { default as refrigeratorIcon } from "./refrigerator-filter-icon.svg";
+export { default as tvIcon } from "./tv-filter-icon.svg";
+export { default as waterIcon } from "./water-filter-icon.svg";
+export { default as vanIcon } from "./van-filter-icon.svg";
+export { default as fullyIntegratedIcon } from "./fully-integrated-filter-icon.svg";
+export { default as alcoveIcon } from "./alcove-filter-icon.svg";

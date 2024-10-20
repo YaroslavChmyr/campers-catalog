@@ -1,8 +1,8 @@
 import css from './MainButton.module.css'
 
-function MainButton({children}) {
+function MainButton({children, onClick}) {
   return (
-    <button className={css.button}>{children}</button>
+    <button className={css.button} onClick={onClick}>{children}</button>
   )
 }
 

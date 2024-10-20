@@ -1,15 +1,18 @@
-import css from "./FilterItem.module.css"
-// import acFilter from "../../assets/icons/ac-filter-icon.svg"
+import css from "./FilterItem.module.css";
+import clsx from "clsx";
 
-function FilterItem( {icon, label, iconAltTag} ) {
+function FilterItem({ icon, label, iconAltTag, isActive, onClick }) {
   return (
     <>
-    <li className={css.filterItem}>
-      <img src={icon} alt={iconAltTag} className={css.filterItemIcon}/>
-      <p className={css.filterItemLabel}>{label}</p>
-    </li>
+      <li
+        className={clsx(css.filterItem, { [css.selected]: isActive })}
+        onClick={onClick}
+      >
+        <img src={icon} alt={iconAltTag} className={css.filterItemIcon} />
+        <p className={css.filterItemLabel}>{label}</p>
+      </li>
     </>
-  )
+  );
 }
 
-export default FilterItem
+export default FilterItem;

@@ -11,10 +11,8 @@ export const fetchCampers = createAsyncThunk(
     try {
       const { equipment, vehicleType } = filters;
 
-      // Build the query parameters using the new function
       const queryString = buildQueryParams(equipment, vehicleType);
 
-      // Make the API request with constructed query parameters
       const response = await axios.get(`/campers?${queryString}`);
       return response.data;
     } catch (e) {

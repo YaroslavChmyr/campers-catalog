@@ -11,28 +11,28 @@ export const buildQueryParams = (selectedEquipment, selectedVehicleType) => {
         case "AC":
           queryParams.append("AC", true);
           break;
-        case "bathroom":
+        case "Bathroom":
           queryParams.append("bathroom", true);
           break;
-        case "kitchen":
+        case "Kitchen":
           queryParams.append("kitchen", true);
           break;
         case "TV":
           queryParams.append("TV", true);
           break;
-        case "radio":
+        case "Radio":
           queryParams.append("radio", true);
           break;
-        case "refrigerator":
+        case "Refrigerator":
           queryParams.append("refrigerator", true);
           break;
-        case "microwave":
+        case "Microwave":
           queryParams.append("microwave", true);
           break;
-        case "gas":
+        case "Gas":
           queryParams.append("gas", true);
           break;
-        case "water":
+        case "Water":
           queryParams.append("water", true);
           break;
         default:

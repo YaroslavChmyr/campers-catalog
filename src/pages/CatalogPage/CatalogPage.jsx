@@ -1,7 +1,8 @@
-import LocationField from "../../components/LocationField/LocationField";
+import LocationFilter from "../../components/LocationField/LocationFilter";
 import FilterList from "../../components/FilterList/FilterList";
 import MainButton from "../../components/MainButton/MainButton";
 import VehicleCard from "../../components/VehicleCard/VehicleCard";
+import LoadMoreButton from "../../components/LoadMoreButton/LoadMoreButton";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCampers,
@@ -9,37 +10,44 @@ import {
   selectError,
   selectEquipment,
   selectVehicleType,
+  selectLocation,
 } from "../../redux/selectors";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchCampers } from "../../api/campersOps";
 import css from "./CatalogPage.module.css";
 
 function CatalogPage() {
   const dispatch = useDispatch();
+  const { isLoading, error, equipment, vehicleType, location } = useSelector(
+    (state) => ({
+      isLoading: selectIsLoading(state),
+      error: selectError(state),
+      equipment: selectEquipment(state),
+      vehicleType: selectVehicleType(state),
+      location: selectLocation(state),
+    })
+  );
 
-  const { isLoading, error, equipment, vehicleType } = useSelector((state) => ({
-    isLoading: selectIsLoading(state),
-    error: selectError(state),
-    equipment: selectEquipment(state),
-    vehicleType: selectVehicleType(state),
-  }));
+  const allVehicles = useSelector(selectCampers);
 
-  const allVehicles = useSelector(selectCampers); // Selector to get all vehicles
+  const [visibleVehicles, setVisibleVehicles] = useState(4);
 
   useEffect(() => {
     dispatch(fetchCampers());
   }, [dispatch]);
 
   const handleSearch = () => {
-    // Log the filters to ensure they are as expected
-    console.log('Filters before dispatching:', { equipment, vehicleType });
-
     const filters = {
       equipment,
       vehicleType,
+      location,
     };
-
     dispatch(fetchCampers(filters));
+    setVisibleVehicles(4);
+  };
+
+  const loadMore = () => {
+    setVisibleVehicles((prevVisible) => prevVisible + 4);
   };
 
   return (
@@ -47,7 +55,7 @@ function CatalogPage() {
       <div className={css.filtersContainer}>
         <div className={css.locationField}>
           <p className={css.locationLabel}>Location</p>
-          <LocationField>Kyiv, Ukraine</LocationField>
+          <LocationFilter>Kyiv, Ukraine</LocationFilter>
         </div>
         <div className={css.vehicleFilters}>
           <p className={css.vehicleFiltersLabel}>Filters</p>
@@ -56,16 +64,30 @@ function CatalogPage() {
         </div>
         <MainButton onClick={handleSearch}>Search</MainButton>
       </div>
+
       {isLoading && <p>Loading...</p>}
-      {error && <p>Something went wrong: {error.message}</p>}
+      {error?.includes("404") ? (
+        <p>There are no campers in this location, please try again</p>
+      ) : (
+        error && <p>Something went wrong: {error}</p>
+      )}
+
       {!isLoading && !error && (
-        <ul className={css.catalogContainer}>
-          {allVehicles.map((camper) => (
-            <li key={camper.id} className={css.vehicleCard}>
-              <VehicleCard vehicle={camper} />
-            </li>
-          ))}
-        </ul>
+        <div className={css.catalogContainer}>
+          <ul className={css.catalog}>
+            {allVehicles.slice(0, visibleVehicles).map((camper) => (
+              <li key={camper.id} className={css.vehicleCard}>
+                <VehicleCard vehicle={camper} />
+              </li>
+            ))}
+          </ul>
+
+          {visibleVehicles < allVehicles.length && (
+            <div className={css.loadMoreContainer}>
+              <LoadMoreButton onClick={loadMore} />
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

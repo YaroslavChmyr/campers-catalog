@@ -9,9 +9,9 @@ export const fetchCampers = createAsyncThunk(
   "campers/fetchAll",
   async (filters = {}, thunkAPI) => {
     try {
-      const { equipment, vehicleType } = filters;
+      const { equipment, vehicleType, location } = filters;
 
-      const queryString = buildQueryParams(equipment, vehicleType);
+      const queryString = buildQueryParams(equipment, vehicleType, location);
 
       const response = await axios.get(`/campers?${queryString}`);
       return response.data;

@@ -1,0 +1,17 @@
+.locationField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+}
+
+.locationInput {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+  background-color: transparent;
+}

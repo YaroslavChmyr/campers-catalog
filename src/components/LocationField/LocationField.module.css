@@ -1,9 +1,0 @@
-.locationField {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 20px;
-  background-color: #f7f7f7;
-  border-radius: 12px;
-  /* width: 100%; */
-}

@@ -32,10 +32,16 @@
   margin-bottom: 32px;
 }
 
-.catalogContainer {
+.catalog {
   display: flex;
   flex-direction: column;
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
+  margin-bottom: 40px;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
 }

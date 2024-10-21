@@ -1,8 +1,12 @@
-export const buildQueryParams = (selectedEquipment, selectedVehicleType) => {
+export const buildQueryParams = (selectedEquipment, selectedVehicleType, selectedLocation) => {
   const queryParams = new URLSearchParams();
 
   if (selectedVehicleType) {
     queryParams.append("form", selectedVehicleType.toLowerCase().replace(/ /g, ''));
+  }
+
+  if (selectedLocation) {
+    queryParams.append("location", selectedLocation);
   }
 
   if (Array.isArray(selectedEquipment) && selectedEquipment.length > 0) {

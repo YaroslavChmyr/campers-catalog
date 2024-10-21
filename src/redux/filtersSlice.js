@@ -5,6 +5,7 @@ const filtersSlice = createSlice({
   initialState: {
     equipment: [],
     vehicleType: "",
+    location: "",
   },
   reducers: {
     toggleEquipment: (state, action) => {
@@ -18,9 +19,12 @@ const filtersSlice = createSlice({
     setVehicleType: (state, action) => {
       state.vehicleType = action.payload;
     },
+    setLocation: (state, action) => {
+      state.location = action.payload;
+    },
   },
 });
 
-export const { toggleEquipment, setVehicleType } = filtersSlice.actions;
+export const { toggleEquipment, setVehicleType, setLocation } = filtersSlice.actions;
 
 export const filtersReducer = filtersSlice.reducer;

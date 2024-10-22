@@ -1,13 +1,15 @@
 import css from "./VehicleCard.module.css";
 import { CiHeart } from "react-icons/ci";
-import { FaStar } from "react-icons/fa6";
-import mapIcon from "../../assets/icons/map-icon.svg";
+import { Link } from "react-router-dom";
 import VehicleAttributeList from "../VehicleAttributeList/VehicleAttributeList";
+import RatingLocationDetails from "../RatingLocationDetails/RatingLocationDetails";
+import VehiclePrice from "../VehiclePrice/VehiclePrice";
 import MainButton from "../MainButton/MainButton";
 
 function VehicleCard({ vehicle }) {
   const {
     name,
+    id,
     price,
     rating,
     location,
@@ -29,25 +31,14 @@ function VehicleCard({ vehicle }) {
         <div className={css.titleContainer}>
           <h2 className={css.vehicleTitle}>{name}</h2>
           <div className={css.priceContainer}>
-            <p className={css.vehiclePrice}>${price}</p>
+            <VehiclePrice price={price} />
             <CiHeart className={css.heartIcon} />
           </div>
         </div>
-        <div className={css.ratingContainer}>
-          <div className={css.rating}>
-            <FaStar className={css.starIcon} />
-            <p className={css.ratingText}>
-              {rating} ({reviews.length} Reviews)
-            </p>
-          </div>
-          <div className={css.location}>
-            <img src={mapIcon} alt="map icon" className={css.mapIcon} />
-            <p className={css.ratingText}>{location}</p>
-          </div>
-        </div>
+        <RatingLocationDetails rating={rating} location={location} reviews={reviews} />
         <p className={css.vehicleDescription}>{description}</p>
         <VehicleAttributeList vehicle={vehicle} />
-        <MainButton>Show More</MainButton>
+        <Link to={`/catalog/${id}/features`} className={css.catalog}><MainButton>Show More</MainButton></Link>
       </div>
     </div>
   );

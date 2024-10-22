@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.rating {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.starIcon {
+  width: 16px;
+  height: 16px;
+  fill: #ffc531;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mapIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.ratingText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+}

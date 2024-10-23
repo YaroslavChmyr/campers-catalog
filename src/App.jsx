@@ -3,7 +3,7 @@ import Navigation from './components/Navigation/Navigation'
 import HomePage from './pages/HomePage/HomePage'
 import CatalogPage from './pages/CatalogPage/CatalogPage'
 import CamperDetailsPage from './pages/CamperDetailsPage/CamperDetailsPage'
-import VehicleFeatures from './components/VehicleFeature/VehicleFeatures'
+import VehicleFeatures from './components/VehicleFeatures/VehicleFeatures'
 import VehicleReviews from './components/VehicleReviews/VehicleReviews'
 
 const App = () => {

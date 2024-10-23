@@ -1,0 +1,49 @@
+.container {
+  padding: 44px;
+  width: 641px;
+  border-radius: 10px;
+  border: 1px solid #dadde1;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6c717b;
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  padding: 18px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+}
+
+.commentField {
+  height: 118px;
+  margin-bottom: 24px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}

@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { NavLink, Outlet} from "react-router-dom";
 import RatingLocationDetails from "../../components/RatingLocationDetails/RatingLocationDetails";
 import VehiclePrice from "../../components/VehiclePrice/VehiclePrice";
+import BookingForm from "../../components/BookingForm/BookingForm";
 import { clsx } from "clsx";
 import css from "./CamperDetailsPage.module.css";
 
@@ -66,7 +67,7 @@ function CamperDetailsPage() {
           <div className={css.bottomSection}>
           <Outlet />
 
-          <h1>Form</h1>
+          <BookingForm />
           </div>
         </>
         </CamperDetailsContext.Provider>

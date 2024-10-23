@@ -1,7 +1,7 @@
 import css from "./VehicleReviews.module.css";
 import { useContext } from "react";
 import { CamperDetailsContext } from "../../pages/CamperDetailsPage/CamperDetailsPage";
-import { FaStar } from "react-icons/fa6";
+import ReactStars from "react-rating-stars-component";
 
 function VehicleReviews() {
   const details = useContext(CamperDetailsContext);
@@ -21,7 +21,11 @@ function VehicleReviews() {
             </div>
             <div className={css.authorRatingContainer}>
               <p className={css.reviewAuthor}>{review.reviewer_name}</p>
-              <FaStar className={css.starIcon} />
+              <ReactStars
+                value={review.reviewer_rating}
+                size={20}
+                edit={false}
+              />
             </div>
           </div>
           <p className={css.reviewText}>{review.comment}</p>

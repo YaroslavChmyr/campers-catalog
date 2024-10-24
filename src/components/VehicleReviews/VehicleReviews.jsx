@@ -1,10 +1,10 @@
 import css from "./VehicleReviews.module.css";
-import { useContext } from "react";
-import { CamperDetailsContext } from "../../pages/CamperDetailsPage/CamperDetailsPage";
+import { useSelector } from "react-redux";
+import { selectCamperDetails } from "../../redux/selectors";
 import ReactStars from "react-rating-stars-component";
 
 function VehicleReviews() {
-  const details = useContext(CamperDetailsContext);
+  const details = useSelector(selectCamperDetails);
   const avatarLetterFormatter = (name) => {
     return name.charAt(0);
   };

@@ -1,10 +1,10 @@
 import css from "./VehicleFeatures.module.css";
-import { useContext } from "react";
-import { CamperDetailsContext } from "../../pages/CamperDetailsPage/CamperDetailsPage";
+import { useSelector } from "react-redux";
+import { selectCamperDetails } from "../../redux/selectors";
 import VehicleAttributeList from "../VehicleAttributeList/VehicleAttributeList";
 
 function VehicleFeatures() {
-  const details = useContext(CamperDetailsContext);
+  const details = useSelector(selectCamperDetails);
   const vehicleFormFormatter = (form) => {
     switch (form) {
       case "fullyIntegrated":

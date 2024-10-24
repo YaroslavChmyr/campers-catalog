@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { createContext } from "react";
 import {
   selectCamperDetails,
   selectIsLoading,
@@ -18,7 +17,6 @@ import css from "./CamperDetailsPage.module.css";
 const isActiveLink = ({ isActive }) => clsx(css.link, {
   [css.active]: isActive
 })
-export const CamperDetailsContext = createContext(null);
 
 function CamperDetailsPage() {
   const dispatch = useDispatch();
@@ -35,7 +33,6 @@ function CamperDetailsPage() {
       {error && <div className={css.error}>{error}</div>}
       {isLoading && <div className={css.loading}>Loading...</div>}
       {!isLoading && !error && details && (
-        <CamperDetailsContext.Provider value={details}>
         <>
           <div className={css.titleContainer}>
             <h2 className={css.vehicleTitle}>{details.name}</h2>
@@ -70,7 +67,6 @@ function CamperDetailsPage() {
           <BookingForm />
           </div>
         </>
-        </CamperDetailsContext.Provider>
       )}
     </div>
   );

@@ -26,11 +26,11 @@ function VehicleAttributeList({ vehicle }) {
     AC: { icon: acIcon, title: "Air Conditioning" },
     transmission: {
       automatic: { icon: automaticIcon, title: "Automatic" },
-      manual: { icon: gasIcon, title: "Manual" },
+      manual: { icon: automaticIcon, title: "Manual" },
     },
     engine: {
       petrol: { icon: petrolIcon, title: "Petrol" },
-      diesel: { icon: gasIcon, title: "Diesel" },
+      diesel: { icon: petrolIcon, title: "Diesel" },
     },
     bathroom: { icon: bathroomIcon, title: "Bathroom" },
     kitchen: { icon: kitchenIcon, title: "Kitchen" },

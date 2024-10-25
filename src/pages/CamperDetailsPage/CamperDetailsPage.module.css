@@ -23,7 +23,6 @@
 .vehiclePhotoItem {
   width: 292px;
   height: 312px;
-  object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
 }

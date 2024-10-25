@@ -36,7 +36,7 @@ function FilterList({ title }) {
   ];
 
   const vehicleTypeMap = [
-    { icon: vanIcon, label: "Van" },
+    { icon: vanIcon, label: "Panel Truck" },
     { icon: fullyIntegratedIcon, label: "Fully Integrated" },
     { icon: alcoveIcon, label: "Alcove" },
   ];
